@@ -1,12 +1,15 @@
 let myChoice = document.querySelector("#choice");
 let btns = document.querySelector("div").childNodes
-let playerChoice = "";
+let playBtn = document.getElementById("play")
+let score = document.getElementById("score")
 btns.forEach((btn) => {
     btn.addEventListener("click", function(e){
         myChoice.innerText = "your Choice: " + this.innerText
         playerChoice=this.innerText
     })
 });
+
+let playerChoice = "";
 let getBot = () => {
     let Choices = ["Rock", "Paper", "Scissors"]
     let randomNum = Math.floor(Math.random()*3)
@@ -15,8 +18,8 @@ let getBot = () => {
 
 let bPoints = 0;
 let pPoints = 0;
-let playBtn = document.getElementById("play")
-let score = document.getElementById("score")
+
+
 playBtn.addEventListener("click", () => {
     let bot = getBot()
     let player = playerChoice
@@ -34,3 +37,5 @@ playBtn.addEventListener("click", () => {
     }
     if(pPoints>4) score.innerText = "You win!!!"
 })
+
+// random comment to change smth for odin. (git branches)
